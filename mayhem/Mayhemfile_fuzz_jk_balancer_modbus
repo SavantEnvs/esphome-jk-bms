@@ -1,0 +1,11 @@
+project: savantenvs/esphome-jk-bms
+target: fuzz_jk_balancer_modbus
+
+cmds:
+  - cmd: /mayhem/fuzz_jk_balancer_modbus
+    libfuzzer: true
+    timeout: 5
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_jk_balancer_modbus/testsuite
